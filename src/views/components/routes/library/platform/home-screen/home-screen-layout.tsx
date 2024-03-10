@@ -13,7 +13,7 @@ export function HomeScreenLayout({ children }: { children: ReactNode }) {
       >
         <TopBar />
         <div className='flex-1 overflow-hidden'>
-          <div className='flex h-full items-center justify-center '>{children}</div>
+          <div className='flex h-full items-center justify-center'>{children}</div>
         </div>
       </div>
     </div>

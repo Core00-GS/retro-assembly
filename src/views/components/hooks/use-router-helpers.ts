@@ -12,6 +12,7 @@ export function useRouterHelpers() {
   const [isHomeRoute] = useRoute(routes.home)
   const [isPlatformRoute] = useRoute(routes.platform)
   const [isRomRoute] = useRoute(routes.rom)
+  const [isSettingsRoute] = useRoute(routes.settings)
 
   const wouter = { location, setLocation, router, params, useRoute }
 
@@ -86,6 +87,7 @@ export function useRouterHelpers() {
     isHomeRoute,
     isPlatformRoute,
     isRomRoute,
+    isSettingsRoute,
     linkToLibrary,
     linkToPlatform,
     linkToRom,

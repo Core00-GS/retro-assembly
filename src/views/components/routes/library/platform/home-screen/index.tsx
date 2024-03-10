@@ -21,6 +21,7 @@ import { GameLaunching } from './game-launching'
 import { HomeScreenLayout } from './home-screen-layout'
 import { useCurrentPlatformName } from './hooks/use-current-platform'
 import { InputTips } from './input-tips'
+import { Settings } from './settings'
 
 function getColumnCount(width: number) {
   const idealItemWidth = innerWidth > 800 ? 200 : 150
@@ -52,7 +53,7 @@ async function getRoms(platform: string) {
 export function HomeScreen() {
   const [roms, setRoms] = useAtom(romsAtom)
   const setPlatforms = useSetAtom(platformsAtom)
-  const { params, isPlatformRoute, isRomRoute, redirectToPlatform } = useRouterHelpers()
+  const { params, isPlatformRoute, isRomRoute, isSettingsRoute, redirectToPlatform } = useRouterHelpers()
   const [measurements = { width: 0, height: 0 }, gridContainerRef] = useMeasure<HTMLDivElement>()
   const [isRetrying, setIsRetrying] = useState(false)
   const currentPlatformName = useCurrentPlatformName()
@@ -168,6 +169,14 @@ export function HomeScreen() {
       await loadPlatformsAndRomsFromRemote()
     })()
   }, [params.library, currentPlatformName, isRomRoute, loadPlatformsAndRomsFromCache, loadPlatformsAndRomsFromRemote])
+
+  if (isSettingsRoute) {
+    return (
+      <HomeScreenLayout>
+        <Settings />
+      </HomeScreenLayout>
+    )
+  }
 
   const isRomsEmpty = !roms?.length
   const showLoading = romsState.status === 'loading' && peekRomsState.status !== 'loading' && isRomsEmpty

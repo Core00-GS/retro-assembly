@@ -18,6 +18,9 @@ export default function App() {
       <Route path={routes.rom}>
         <UniversalHomeRoute />
       </Route>
+      <Route path={routes.settings}>
+        <UniversalHomeRoute />
+      </Route>
 
       <Route path='/auth/onedrive'>
         <AuthOnedrive />

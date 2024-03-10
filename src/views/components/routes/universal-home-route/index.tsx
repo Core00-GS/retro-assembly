@@ -8,8 +8,16 @@ import { HomeScreen } from '../library/platform/home-screen'
 import { GameAddons } from '../library/rom/game-addons'
 
 export function UniversalHomeRoute() {
-  const { params, isHomeRoute, isPlatformRoute, isRomRoute, navigateToLibrary, navigateToPlatform, redirectToHome } =
-    useRouterHelpers()
+  const {
+    params,
+    isHomeRoute,
+    isPlatformRoute,
+    isRomRoute,
+    isSettingsRoute,
+    navigateToLibrary,
+    navigateToPlatform,
+    redirectToHome,
+  } = useRouterHelpers()
   const [started, setStarted] = useState(false)
 
   const [, { execute }] = useAsync(async () => {
@@ -51,7 +59,7 @@ export function UniversalHomeRoute() {
     )
   }
 
-  if (isPlatformRoute) {
+  if (isPlatformRoute || isSettingsRoute) {
     return (
       <>
         <Helmet>
