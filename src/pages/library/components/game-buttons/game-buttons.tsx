@@ -11,6 +11,7 @@ import { usePreference } from '#@/pages/library/hooks/use-preference.ts'
 import { getFileUrl } from '#@/pages/library/utils/file.ts'
 import { LaunchButton } from '../../platform/rom/components/launch-button.tsx'
 import { EmulatorPortal } from '../emulator-portal/emulator-portal.tsx'
+import { EmulatorSessionProvider } from '../emulator-portal/emulator-session-provider.tsx'
 import { BioseMissingMessage } from './biose-missing-message.tsx'
 
 const isAppleMobile = /iphone|ipad|ipod/iu.test(navigator.userAgent)
@@ -21,6 +22,14 @@ const isAppleMobileDesktopMode =
 const mayNeedsUserInteraction = isAppleMobile || isAppleMobileDesktopMode
 
 export function GameButtons() {
+  return (
+    <EmulatorSessionProvider>
+      <GameButtonsContent />
+    </EmulatorSessionProvider>
+  )
+}
+
+function GameButtonsContent() {
   const { rom, state } = useLoaderData()
   const { t } = useTranslation()
   const { error, isPreparing, launch, prepare } = useEmulator()
