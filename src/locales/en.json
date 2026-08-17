@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(Use <rightButton></rightButton> as confirm, <downButton></downButton> as cancel)",
   "settings.nintendoStyle": "Nintendo Style",
   "settings.platformShader": "Platform-specific shader",
+  "settings.rewind": "Rewind",
+  "settings.rewindDescription": "Keep a buffer of past frames to rewind gameplay. Disabling it frees memory and improves performance.",
   "settings.saturation": "Saturation",
   "settings.saturationDescription": "Reduce the saturation of colors within the application, for those with color sensitivities.",
   "settings.shader": "Shader",

@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(Используйте <rightButton></rightButton> для подтверждения, <downButton></downButton> для отмены)",
   "settings.nintendoStyle": "Стиль Nintendo",
   "settings.platformShader": "Платформоспецифичный шейдер",
+  "settings.rewind": "Перемотка назад",
+  "settings.rewindDescription": "Хранит буфер прошлых кадров для перемотки игры назад. Отключение освобождает память и улучшает производительность.",
   "settings.saturation": "Насыщенность",
   "settings.saturationDescription": "Снижение насыщенности цветов в приложении для людей с чувствительностью к цвету.",
   "settings.shader": "Шейдер",

@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(<rightButton></rightButton>で確認、<downButton></downButton>でキャンセル)",
   "settings.nintendoStyle": "任天堂スタイル",
   "settings.platformShader": "プラットフォーム固有のシェーダー",
+  "settings.rewind": "リワインド",
+  "settings.rewindDescription": "過去のフレームをバッファに保存してゲームを巻き戻せるようにします。無効にするとメモリが解放され、パフォーマンスが向上します。",
   "settings.saturation": "彩度",
   "settings.saturationDescription": "色覚に敏感な方のために、アプリケーション内の色の彩度を下げます。",
   "settings.shader": "シェーダー",

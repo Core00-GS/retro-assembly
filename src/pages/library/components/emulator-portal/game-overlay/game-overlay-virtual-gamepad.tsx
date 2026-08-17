@@ -3,6 +3,8 @@ import { type ReactNode, useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { useEmulatorLaunched } from '#@/pages/library/atoms.ts'
 import { useGamepads } from '#@/pages/library/hooks/use-gamepads.ts'
+import { usePreference } from '#@/pages/library/hooks/use-preference.ts'
+import { useRom } from '#@/pages/library/hooks/use-rom.ts'
 import { useEmulator } from '../hooks/use-emulator.ts'
 import { useGameOverlay } from '../hooks/use-game-overlay.ts'
 import { VirtualGamepadButton } from './virtual-gamepad-button.tsx'
@@ -78,6 +80,9 @@ export function GameOverlayVirtualGamepad() {
   const [gamepadVisible, setGamepadVisible] = useState(!connected)
   const { show } = useGameOverlay()
   const [launched] = useEmulatorLaunched()
+  const rom = useRom()
+  const { preference } = usePreference()
+  const rewindEnabled = rom ? preference.emulator.platform[rom.platform].rewindEnabled : true
 
   if (!launched) {
     return
@@ -105,9 +110,11 @@ export function GameOverlayVirtualGamepad() {
       <div
         className={twMerge('bottom-safe left-safe absolute flex flex-col gap-2 p-2', clsx({ hidden: !gamepadVisible }))}
       >
-        <VirtualGamepadCommandButton command='REWIND' className='rounded px-2 py-1 ring ring-white/20' title='Rewind'>
-          <span className='icon-[mdi--rewind] size-6' />
-        </VirtualGamepadCommandButton>
+        {rewindEnabled ? (
+          <VirtualGamepadCommandButton className='rounded px-2 py-1 ring ring-white/20' command='REWIND' title='Rewind'>
+            <span className='icon-[mdi--rewind] size-6' />
+          </VirtualGamepadCommandButton>
+        ) : null}
         <div className='flex w-full gap-2'>
           <VirtualGamepadButton buttonName='l' className='flex-1 rounded px-2 py-1 ring ring-white/20'>
             L1

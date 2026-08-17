@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(使用 <rightButton></rightButton> 确认，<downButton></downButton> 取消)",
   "settings.nintendoStyle": "任天堂风格",
   "settings.platformShader": "平台特定着色器",
+  "settings.rewind": "回退",
+  "settings.rewindDescription": "保留过去的帧缓冲区以回退游戏。禁用可释放内存并提高性能。",
   "settings.saturation": "饱和度",
   "settings.saturationDescription": "降低应用内的颜色饱和度，适用于对颜色敏感的用户。",
   "settings.shader": "着色器",

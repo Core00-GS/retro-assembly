@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { useGamepadMapping } from '#@/pages/library/hooks/use-gamepad-mapping.ts'
 import { useGamepads } from '#@/pages/library/hooks/use-gamepads.ts'
 import { useInputMapping } from '#@/pages/library/hooks/use-input-mapping.ts'
+import { usePreference } from '#@/pages/library/hooks/use-preference.ts'
+import { useRom } from '#@/pages/library/hooks/use-rom.ts'
 import { GameInputMessageItem } from './game-input-message-item.tsx'
 
 export function GameInputMessage() {
@@ -11,11 +13,16 @@ export function GameInputMessage() {
   const { connected } = useGamepads()
   const gamepadMapping = useGamepadMapping()
   const { keyboard: keyboardMapping } = useInputMapping()
+  const { preference } = usePreference()
+  const rom = useRom()
+  const rewindEnabled = rom ? preference.emulator.platform[rom.platform].rewindEnabled : true
 
   const messages: { keyNames: string[]; message: ReactNode }[] = connected
     ? [
         { keyNames: gamepadMapping.$pause.split(/\s+\+\s/u), message: t('emulator.pause') },
-        { keyNames: gamepadMapping.$rewind.split(/\s+\+\s/u), message: t('emulator.rewind') },
+        ...(rewindEnabled
+          ? [{ keyNames: gamepadMapping.$rewind.split(/\s+\+\s/u), message: t('emulator.rewind') }]
+          : []),
         { keyNames: gamepadMapping.$fast_forward.split(/\s+\+\s/u), message: t('emulator.fastForward') },
       ]
     : [
@@ -49,7 +56,9 @@ export function GameInputMessage() {
           message: <span className='icon-[mdi--gamepad-circle-down]' />,
         },
         { keyNames: compact([keyboardMapping.$pause]), message: t('emulator.pause') },
-        { keyNames: compact([keyboardMapping.input_rewind]), message: t('emulator.rewind') },
+        ...(rewindEnabled
+          ? [{ keyNames: compact([keyboardMapping.input_rewind]), message: t('emulator.rewind') }]
+          : []),
         { keyNames: compact([keyboardMapping.input_hold_fast_forward]), message: t('emulator.fastForward') },
       ]
 

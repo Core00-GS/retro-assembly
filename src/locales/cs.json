@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(Použijte <rightButton></rightButton> pro potvrzení, <downButton></downButton> pro zrušení)",
   "settings.nintendoStyle": "Nintendo styl",
   "settings.platformShader": "Shader specifický pro platformu",
+  "settings.rewind": "Přetočení",
+  "settings.rewindDescription": "Ukládá vyrovnávací paměť minulých snímků, abyste mohli přetočit hru zpět. Vypnutí uvolní paměť a zlepší výkon.",
   "settings.saturation": "Saturace",
   "settings.saturationDescription": "Snížení saturace barev v aplikaci pro osoby s citlivostí na barvy.",
   "settings.shader": "Shader",

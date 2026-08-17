@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(<rightButton></rightButton>로 확인, <downButton></downButton>로 취소)",
   "settings.nintendoStyle": "닌텐도 스타일",
   "settings.platformShader": "플랫폼별 셰이더",
+  "settings.rewind": "되감기",
+  "settings.rewindDescription": "과거 프레임을 버퍼에 저장하여 게임을 되감을 수 있게 합니다. 비활성화하면 메모리가 해제되고 성능이 향상됩니다.",
   "settings.saturation": "채도",
   "settings.saturationDescription": "색상에 민감한 사용자를 위해 애플리케이션 내 색상 채도를 낮춥니다.",
   "settings.shader": "셰이더",

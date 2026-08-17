@@ -16,6 +16,7 @@ export interface Preference {
       {
         bioses: { fileId: string; fileName: string }[]
         core: CoreName
+        rewindEnabled: boolean
         shader?: string
       }
     >
@@ -135,6 +136,7 @@ export const defaultPreference: ResolvedPreference = {
     platform: mapValues(platformMap, ({ cores: [core] }) => ({
       bioses: [],
       core,
+      rewindEnabled: true,
       shader: 'inherit',
     })),
     shader: '',

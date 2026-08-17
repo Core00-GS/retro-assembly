@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(Usa <rightButton></rightButton> per confermare, <downButton></downButton> per annullare)",
   "settings.nintendoStyle": "Stile Nintendo",
   "settings.platformShader": "Shader specifico per piattaforma",
+  "settings.rewind": "Riavvolgimento",
+  "settings.rewindDescription": "Mantiene un buffer dei frame passati per riavvolgere il gioco. Disabilitarlo libera memoria e migliora le prestazioni.",
   "settings.saturation": "Saturazione",
   "settings.saturationDescription": "Riduci la saturazione dei colori nell'applicazione, per chi ha sensibilità ai colori.",
   "settings.shader": "Shader",

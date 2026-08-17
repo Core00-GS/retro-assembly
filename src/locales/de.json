@@ -340,6 +340,8 @@
   "settings.nintendoButtonExplanation": "(Verwenden Sie <rightButton></rightButton> zum Bestätigen, <downButton></downButton> zum Abbrechen)",
   "settings.nintendoStyle": "Nintendo-Stil",
   "settings.platformShader": "Plattformspezifischer Shader",
+  "settings.rewind": "Zurückspulen",
+  "settings.rewindDescription": "Hält einen Puffer vergangener Frames zum Zurückspulen des Spiels bereit. Deaktivieren gibt Speicher frei und verbessert die Leistung.",
   "settings.saturation": "Sättigung",
   "settings.saturationDescription": "Reduzieren Sie die Farbsättigung in der Anwendung für Menschen mit Farbempfindlichkeit.",
   "settings.shader": "Shader",

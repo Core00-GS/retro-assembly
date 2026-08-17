@@ -11,6 +11,7 @@ import { UpdateButton } from '../update-button.tsx'
 import { BIOSOptions } from './bios-options.tsx'
 import { CoreOptions } from './core-options.tsx'
 import { PlatformShaderSettings } from './platform-shader-settings.tsx'
+import { RewindSettings } from './rewind-settings.tsx'
 
 export function CoresSettings() {
   const { t } = useTranslation()
@@ -79,6 +80,8 @@ export function CoresSettings() {
       </SettingsTitle>
 
       <Card>
+        <RewindSettings platform={selectedPlatform} />
+
         <BIOSOptions platform={selectedPlatform} />
 
         <PlatformShaderSettings platform={selectedPlatform} />

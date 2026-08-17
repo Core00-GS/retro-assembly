@@ -81,7 +81,7 @@ export function useEmulator() {
         input_player1_l_y_minus: preference.input.keyboardMapping.input_player1_l_y_plus,
         input_player1_l_y_plus: preference.input.keyboardMapping.input_player1_l_y_minus,
         rewind_buffer_size: ['mupen64plus_next', 'pcsx_rearmed'].includes(core) ? 100 : 20,
-        rewind_enable: true,
+        rewind_enable: preference.emulator.platform[rom.platform].rewindEnabled,
         run_ahead_enabled: !['mupen64plus_next', 'pcsx_rearmed'].includes(core),
         video_smooth: preference.emulator.videoSmooth,
       },
@@ -90,7 +90,7 @@ export function useEmulator() {
       shader,
       state: state?.fileId ? getFileUrl(state.fileId) : undefined,
     }),
-    [romObject, bios, core, preference, emulatorGamepadMapping, shader, state?.fileId],
+    [romObject, bios, core, preference, emulatorGamepadMapping, shader, state?.fileId, rom.platform],
   )
 
   const {
