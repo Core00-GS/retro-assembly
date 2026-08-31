@@ -239,7 +239,7 @@ const basePlatformMap = {
   },
   genesis: {
     bioses: [{ md5: '45e298905a08f9cfb38fd504cd6dbc84', name: 'bios_MD.bin' }, { name: 'ggenie.bin' }],
-    cores: ['genesis_plus_gx'],
+    cores: ['genesis_plus_gx', 'picodrive'],
     displayNameI18nKey: 'platform.genesis',
     fileExtensions: ['.md', '.gen', '.zip'],
     info: {
@@ -252,7 +252,7 @@ const basePlatformMap = {
   },
   megadrive: {
     bioses: [{ md5: '45e298905a08f9cfb38fd504cd6dbc84', name: 'bios_MD.bin' }, { name: 'ggenie.bin' }],
-    cores: ['genesis_plus_gx'],
+    cores: ['genesis_plus_gx', 'picodrive'],
     displayNameI18nKey: 'platform.megadrive',
     fileExtensions: ['.md', '.gen', '.zip'],
     info: {
@@ -363,7 +363,7 @@ const basePlatformMap = {
   sega32x: {
     cores: ['picodrive'],
     displayNameI18nKey: 'platform.sega32x',
-    fileExtensions: ['.32X', '.zip'],
+    fileExtensions: ['.32x', '.zip'],
     info: {
       developer: 'Nintendo',
       manufacturer: 'Nintendo',

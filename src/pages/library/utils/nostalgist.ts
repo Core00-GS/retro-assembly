@@ -15,7 +15,12 @@ function getCoreCDNUrl(core: string) {
         'cores',
         `${core}_libretro.zip`,
       ]
-    : ['gh', ['arianrhodsandlot/retroarch-emscripten-build', 'v1.22.2'].join('@'), 'retroarch', `${core}_libretro.zip`]
+    : [
+        'gh',
+        ['arianrhodsandlot/retroarch-emscripten-build', 'v1.22.2-1'].join('@'),
+        'retroarch',
+        `${core}_libretro.zip`,
+      ]
   const path = segments.join('/')
   return new URL(path, cdnHost)
 }
